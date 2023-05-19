@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Audio Recording Transcription",
+  "description": "Audio Recording and Transcription to text via AI Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "icons": {
+    "16": "images/icon-16.png"
+  }
+}
