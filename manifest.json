@@ -8,7 +8,5 @@
   },
   "icons": {
     "16": "images/icon-16.png"
-  },
-  "host_permissions": ["https://developer.chrome.com/*"],
-  "permissions": ["tabGroups"]
+  }
 }
