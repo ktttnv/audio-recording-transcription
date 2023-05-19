@@ -7,15 +7,11 @@ export const Home = () => {
     let {push} = useHistory();
 
     return (
-        <div>
-            <header>
-                <p>Home</p>
-
-
+        <div className="homeContainer">
+            <header className="headerContainer">
+              <h1 className="mainHeading">Audio Recording Transcription</h1>
             </header>
-            {/* <header class="headerContainer">
-              <h1 class="mainHeading">Audio Recording Transcription</h1>
-            </header> */}
+
 
             <main className="mainContainer">
 

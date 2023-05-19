@@ -1,5 +1,5 @@
 {
-  "name": "chrome-react-extension-example",
+  "name": "audio-recording-transcription-extension",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 export const About = () => {
     let {push} = useHistory();
     return (
-        <div>
+        <div className="aboutContainer">
             <header>
                 <p>About</p>
                 <button onClick={() => {
