@@ -12,9 +12,7 @@ export const Home = () => {
               <h1 className="mainHeading">Audio Recording Transcription</h1>
             </header>
 
-
             <main className="mainContainer">
-
               <div className="recordingContainer">
                 <img src={microphoneIcon} alt="Microphone icon" width="48" height="48"/>
                 <div className="time">
@@ -25,7 +23,6 @@ export const Home = () => {
               <div className="buttonContainer">
                 <button className="commonButton">Start</button>
               </div>
-
             </main>
 
             <footer className="footerContainer">
