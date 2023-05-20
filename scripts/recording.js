@@ -1,8 +1,8 @@
-import { fs } from "fs";
+import { audioconcat } from "audioconcat";
 
 const timeSliceMillis = 10 * 60 * 1000;
 let recorder;
-
+let chunkNum = 0;
 function createFilename(chunkNum = "") {
     return `recording${chunkNum}.mp3`;
 }
@@ -35,19 +35,34 @@ export function initRecording(pathToStore) {
     
         // Начинаем запись
         recorder.start(timeSliceMillis);
-    
-        let chunkNum = 0;
+
         // Обработчик события на завершение записи
         recorder.ondataavailable = function(e) {
             // Отправляем данные на сервер или сохраняем на диск
-            var blob = new Blob([e.data], { type: 'audio/mp3' });
-            fs.writeFileSync(`${pathToStore}/${createFilename(chunkNum)}`, blob);
+            const blob = new Blob([e.data], { type: 'audio/mp3' });
+            const chunkName = `audioChunks${chunkNum}`;
+            const dataToStorage = {};
+            dataToStorage[chunkName] = blob;
+            chrome.storage.local.set(dataToStorage, function() { alert("Chunk created!") });
             chunkNum++;
             // ...
         };
     
         // Обработчик события на остановку записи
         recorder.onstop = function() {
+            let result = [];
+            for (let i = 0; i < chunkNum; i++) {
+                chrome.storage.local.get([`audioChunks${i}`], function(value) {
+                    result.push(value[`audioChunks${i}`]);
+                });
+            }
+            audioconcat(result).concat().then((blob) => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'audio.mp3';
+                a.click();
+            })
             alert("RECORDING FINISHED");
             // ...
         };
