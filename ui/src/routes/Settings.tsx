@@ -1,17 +1,16 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { PrimaryLayout } from "../layouts/PrimaryLayout";
 
 export const Settings = () => {
     let {push} = useHistory();
     return (
-        <div className="settingsContainer">
-            <header>
-                <p>Settings</p>
-                <button onClick={() => {
-                    push('/')
-                }}>Home page
-                </button>
-            </header>
-        </div>
-    )
+      <PrimaryLayout>
+        <p>There is no settings yet</p>
+        <button onClick={() => {
+            push('/')
+        }}>Home page
+        </button>
+      </PrimaryLayout> 
+      )
 }

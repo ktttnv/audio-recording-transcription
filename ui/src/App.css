@@ -46,10 +46,6 @@
   justify-content: space-between;
 }
 
-.link {
-  cursor: pointer;
-}
-
 .homeContainer, .aboutContainer, .settingsContainer {
-  margin: 8px;
+  padding: 8px;
 }
