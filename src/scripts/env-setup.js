@@ -1,0 +1,1 @@
+process.env.FLUENTFFMPEG_COV=false

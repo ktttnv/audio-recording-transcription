@@ -1,6 +1,6 @@
+/*global chrome*/
 import { audioconcat } from "audioconcat";
 
-const timeSliceMillis = 10 * 60 * 1000;
 let recorder;
 let chunkNum = 0;
 function createFilename(chunkNum = "") {
@@ -8,6 +8,7 @@ function createFilename(chunkNum = "") {
 }
 
 export function initRecording(pathToStore) {
+    const timeSliceMillis = 10 * 60 * 1000;
     // Получаем доступ к звуковым данным из системы
     navigator.mediaDevices.getUserMedia({audio: {mediaSource: 'audio'} }).then(function(systemStream) {
         // Получаем доступ к микрофону

@@ -7,11 +7,14 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/history": "^5.0.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
-    "audioconcat": "^0.1.4",
+    "audioconcat": "file:../audioconcat-fixed-ffmpeg",
+    "env-cmd": "^10.1.0",
+    "fluent-ffmpeg-fixed": "file:../node-fluent-ffmpeg-fixed",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.2.0",
@@ -20,6 +23,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "env-setup": "node src/scripts/env-setup.js",
     "start": "react-scripts start",
     "build": "craco build",
     "test": "react-scripts test",

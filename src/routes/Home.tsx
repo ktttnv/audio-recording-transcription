@@ -1,10 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { initRecording, stopRecording } from "../scripts/recording";
 
 import microphoneIcon from "../images/micro.png";
 
 export const Home = () => {
     let {push} = useHistory();
+    let startButtonClicksCounter = 0;
 
     return (
         <div className="homeContainer">
@@ -21,7 +23,14 @@ export const Home = () => {
               </div>
 
               <div className="buttonContainer">
-                <button className="commonButton">Start</button>
+                <button className="commonButton" onClick={() => {
+                    if (startButtonClicksCounter % 2 === 0) {
+                      initRecording();
+                    } else {
+                      stopRecording();
+                    }
+                    startButtonClicksCounter++;
+                }}>Start</button>
               </div>
             </main>
 
