@@ -11,10 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ffmpeg-installer/ffmpeg": "^1.1.0",
-    "fluent-ffmpeg": "^2.1.2",
-    "mic": "^2.1.2",
-    "node-record-lpcm16": "^1.0.1",
     "openai": "^3.2.1"
   }
 }
