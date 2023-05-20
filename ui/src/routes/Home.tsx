@@ -3,18 +3,15 @@ import { useHistory } from "react-router-dom";
 import { initRecording, stopRecording } from "../scripts/recording";
 
 import microphoneIcon from "../images/micro.png";
+import { PrimaryLayout } from "../layouts/PrimaryLayout";
 
 export const Home = () => {
     let {push} = useHistory();
     let startButtonClicksCounter = 0;
 
     return (
-        <div className="homeContainer">
-            <header className="headerContainer">
-              <h1 className="mainHeading">Audio Recording Transcription</h1>
-            </header>
-
-            <main className="mainContainer">
+      <PrimaryLayout>
+        <main className="mainContainer">
               <div className="recordingContainer">
                 <img src={microphoneIcon} alt="Microphone icon" width="48" height="48"/>
                 <div className="time">
@@ -37,14 +34,16 @@ export const Home = () => {
             <footer className="footerContainer">
                 <button onClick={() => {
                     push('/about')
-                }}>About
+                }}>
+                  About
                 </button>
 
                 <button onClick={() => {
                     push('/settings')
-                }}>Settings
+                }}>
+                  Settings
                 </button>
             </footer>
-        </div>
+      </PrimaryLayout>
     )
 }
