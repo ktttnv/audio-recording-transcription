@@ -6,7 +6,7 @@ import { Home } from "./routes/Home";
 
 import './App.css';
 
-export const App = () => {
+const App = () => {
     return (
         <Switch>
             <Route path="/about">
@@ -21,3 +21,5 @@ export const App = () => {
         </Switch>
     )
 };
+
+export default App;

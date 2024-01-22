@@ -26,7 +26,8 @@
     }
   ],
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "host_permissions": ["*://*/*"],
   "content_security_policy": {
